@@ -38,6 +38,7 @@
   .text-mask {
     overflow: hidden;
     display: block;
+    padding-bottom: 0.3em;
   }
 
   .text-mask span {
@@ -93,6 +94,21 @@
     justify-content: space-around;
     gap: 2rem;
     min-width: 100%;
+  }
+
+  /* Scrollbar Hide Utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Smooth Scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
 }
 

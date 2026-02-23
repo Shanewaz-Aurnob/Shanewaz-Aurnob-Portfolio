@@ -8,14 +8,20 @@ interface TextMaskProps {
 
 export const TextMask: React.FC<TextMaskProps> = ({ children, delay = 0 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div ref={ref} className="text-mask">
+    <div ref={ref} className="overflow-hidden block pb-[0.15em]">
       <motion.span
-        initial={{ y: "100%" }}
-        animate={isInView ? { y: 0 } : { y: "100%" }}
-        transition={{ duration: 0.8, delay, ease: [0.33, 1, 0.68, 1] }}
+        className="block"
+        initial={{ y: "100%", opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
+        transition={{ 
+          duration: 0.6, 
+          delay, 
+          ease: [0.22, 1, 0.36, 1],
+          opacity: { duration: 0.3, delay }
+        }}
       >
         {children}
       </motion.span>

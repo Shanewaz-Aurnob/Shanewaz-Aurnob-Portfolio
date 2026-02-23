@@ -230,6 +230,32 @@ export const galleryData = [
 // Tech Stack Data
 export const techStackData = ["React.js", "Node.js", "TensorFlow", "Python", "Machine Learning", "Full-Stack", "NLP", "Express.js", "MySQL", "Firebase"];
 
+// Research Publications Data
+export const researchData = [
+  {
+    title: "Crisis Response through Social Cues Analysis",
+    authors: ["Shanewaz Aurnob, Dr. Abu Nowshed Chy"],
+    journal: "Undergraduate Thesis, University of Chittagong",
+    year: "2025",
+    type: "Thesis",
+    abstract: "Developed a Bengali social cue classification system using machine learning and transformer-based models for multiclass crisis-related text analysis.",
+    doi: "",
+    citations: 0,
+    tags: ["NLP", "Machine Learning", "Transformers", "Bengali Text Classification", "Crisis Analysis"]
+  },
+  {
+    title: "Exploring media consumption and mental health among young adults during the second wave of COVID-19 in Bangladesh",
+    authors: ["Md. Najmus Sayadat Pitol", "Muhammad Mainuddin Patwary", "Shanewaz Aurnob", "et al."],
+    journal: "Heliyon, Vol. 9, Issue 10",
+    year: "2023",
+    type: "Journal Article",
+    abstract: "A comprehensive study examining the relationship between media consumption patterns and mental health outcomes among young adults during the COVID-19 pandemic in Bangladesh.",
+    doi: "https://doi.org/10.1016/j.heliyon.2023.e20371",
+    citations: 4,
+    tags: ["Mental Health", "COVID-19", "Media Studies", "Public Health", "Bangladesh"]
+  }
+];
+
 // Social Links Data
 export const socialLinks = [
   { icon: 'Github', href: "https://github.com/Shanewaz-Aurnob", label: "GitHub" },

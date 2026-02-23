@@ -9,7 +9,7 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ onOpenModal }) => {
   return (
     <Section id="projects" subtitle="Selected Works" title="Projects">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
         {projectsData.map((project, i) => (
           <ProjectCard 
             key={i}

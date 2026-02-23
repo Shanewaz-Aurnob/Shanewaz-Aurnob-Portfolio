@@ -1,52 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Globe, Terminal, Database } from 'lucide-react';
+import { Code2, Globe, Terminal, Database, Eye, Download, Mail } from 'lucide-react';
 import { TextMask, ParallaxBackground, Magnetic } from '../shared';
 import { Marquee } from '../shared';
 import { techStackData } from '../../data/portfolioData';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onViewResume?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onViewResume }) => {
   return (
     <>
-      <section id="home" className="min-h-[75vh] flex flex-col justify-center px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative z-10 pt-20 pb-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="home" className="min-h-[70vh] sm:min-h-[75vh] flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-16 max-w-7xl mx-auto relative z-10 pt-16 sm:pt-20 pb-8 sm:pb-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
             <TextMask>
-              <span className="text-accent text-[9px] md:text-[10px] uppercase tracking-[0.4em] mb-4 block font-bold">
+              <span className="text-accent text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 block font-bold">
                 Computer Science Graduate
               </span>
             </TextMask>
-            <h1 className="mb-6">
-              <div className="flex flex-col gap-0 leading-[0.9]">
-                <div className="text-[9vw] lg:text-[4.5vw] font-serif tracking-tighter text-white">
+            <h1 className="mb-4 sm:mb-6">
+              <div className="flex flex-col">
+                <div className="text-[12vw] sm:text-[9vw] lg:text-[5vw] font-serif tracking-tight text-white leading-[1.1]">
                   <TextMask delay={0.2}>Shanewaz</TextMask>
                 </div>
-                <div className="text-[9vw] lg:text-[4.5vw] font-serif tracking-tighter italic text-white/70 ml-4 leading-[1] pt-1">
-                  <TextMask delay={0.4}>Aurnob</TextMask>
+                <div className="text-[12vw] sm:text-[9vw] lg:text-[5vw] font-serif tracking-tight italic text-white/70 ml-2 sm:ml-4 leading-[1.1]">
+                  <TextMask delay={0.5}>Aurnob</TextMask>
                 </div>
               </div>
             </h1>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="text-base md:text-lg text-white/50 font-light leading-relaxed max-w-lg text-balance"
+                className="text-sm sm:text-base md:text-lg text-white/50 font-light leading-relaxed max-w-lg text-balance"
               >
                 Specializing in <span className="text-white font-medium">Machine Learning</span> and <span className="text-white font-medium">Full-Stack Development</span>. 
                 Committed to organizational growth through analytical precision.
               </motion.p>
-              <div className="flex gap-4 items-center flex-wrap">
+              <div className="flex gap-3 sm:gap-4 items-center flex-wrap">
                 <Magnetic>
                   <motion.a 
                     href="#projects"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-white text-dark text-[10px] uppercase tracking-[0.3em] font-bold rounded-full hover:bg-accent transition-all duration-500 shadow-2xl shadow-white/10"
+                    className="px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-dark text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold rounded-full hover:bg-accent transition-all duration-500 shadow-2xl shadow-white/10"
                   >
                     View Work
                   </motion.a>
@@ -56,10 +60,23 @@ export const Hero: React.FC = () => {
                     href="#contact"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border border-white/10 text-white text-[10px] uppercase tracking-[0.3em] font-bold rounded-full hover:bg-white hover:text-dark transition-all duration-500"
+                    className="group flex items-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 border border-white/10 text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold rounded-full hover:bg-white hover:text-dark transition-all duration-500"
                   >
-                    Get in Touch
+                    <Mail size={14} className="group-hover:scale-110 transition-transform" />
+                    <span>Get in Touch</span>
                   </motion.a>
+                </Magnetic>
+                <Magnetic>
+                  <motion.button 
+                    onClick={onViewResume}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group flex items-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-accent to-accent/80 text-dark text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold rounded-full hover:from-white hover:to-white/90 transition-all duration-500 shadow-2xl shadow-accent/20"
+                    aria-label="View Resume"
+                  >
+                    <Eye size={16} className="group-hover:scale-110 transition-transform" />
+                    <span>View Resume</span>
+                  </motion.button>
                 </Magnetic>
               </div>
             </div>
@@ -69,7 +86,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end hidden sm:flex"
           >
             <div className="relative w-32 h-32 md:w-44 md:h-44 lg:w-56 lg:h-56 mx-auto lg:mx-0">
               <div className="absolute inset-0 bg-accent/20 rounded-full blur-[60px] lg:blur-[80px] animate-pulse"></div>
@@ -115,10 +132,10 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 hidden sm:flex"
         >
-          <span className="text-[8px] uppercase tracking-[0.4em] text-white/20 font-bold">Scroll</span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-accent/50 to-transparent"></div>
+          <span className="text-[7px] sm:text-[8px] uppercase tracking-[0.4em] text-white/20 font-bold">Scroll</span>
+          <div className="w-[1px] h-6 sm:h-8 bg-gradient-to-b from-accent/50 to-transparent"></div>
         </motion.div>
       </section>
 

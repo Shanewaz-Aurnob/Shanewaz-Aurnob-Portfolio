@@ -28,21 +28,21 @@ export const Section: React.FC<SectionProps> = ({
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className={`py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto relative ${className}`}
+      className={`py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 max-w-7xl mx-auto relative ${className}`}
     >
       {(title || subtitle) && (
-        <div className="mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <div className="max-w-2xl">
+        <div className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-8">
+          <div className="max-w-full overflow-hidden">
             {subtitle && (
               <TextMask delay={0.1}>
-                <span className="text-accent text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 block font-bold">
+                <span className="text-accent text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] mb-2 md:mb-4 block font-bold">
                   {subtitle}
                 </span>
               </TextMask>
             )}
             {title && (
               <TextMask delay={0.2}>
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter leading-relaxed">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight md:tracking-tighter leading-tight md:leading-none">
                   {title}
                 </h2>
               </TextMask>

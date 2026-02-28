@@ -97,14 +97,64 @@ export const expertiseData = [
   { title: "Professional", icon: GraduationCap, items: ["Project Management", "Leadership", "Teamwork", "Public Relation"] }
 ];
 
+// Skills Data - Technologies used in portfolio projects
+export const skillsData = [
+  {
+    category: "Frontend Development",
+    icon: Globe,
+    skills: ["React.js", "React Native", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "GraphQL"]
+  },
+  {
+    category: "Backend Development",
+    icon: Terminal,
+    skills: ["Node.js", "Express.js", "TypeScript", "REST API", "GraphQL", "Authentication", "Server-side Logic"]
+  },
+  {
+    category: "Databases",
+    icon: Briefcase,
+    skills: ["MySQL", "Firebase", "MongoDB", "Real-time Databases", "Query Optimization"]
+  },
+  {
+    category: "Machine Learning & AI",
+    icon: Cpu,
+    skills: ["TensorFlow Lite", "Scikit-learn", "Python", "Neural Networks", "Image Recognition", "Prolog", "Expert Systems"]
+  },
+  {
+    category: "IoT & Embedded Systems",
+    icon: Layers,
+    skills: ["Arduino", "ESP32", "C++", "Microcontrollers", "Sensors", "Blynk Platform", "IoT Architecture"]
+  },
+  {
+    category: "Mobile Development",
+    icon: Code2,
+    skills: ["React Native", "Android Studio", "Firebase Integration", "Cross-platform Development"]
+  },
+  {
+    category: "Tools & Platforms",
+    icon: Terminal,
+    skills: ["Git", "GitHub", "GitLab", "VS Code", "Jupyter Notebook", "Vite", "npm/yarn"]
+  },
+  {
+    category: "Soft Skills",
+    icon: Users,
+    skills: ["Project Management", "Team Leadership", "Communication", "Problem Solving", "System Design"]
+  }
+];
+
 // Education Data
 export const educationData = [
+  { 
+    degree: "M.S in Engineering (CSE)", 
+    institution: "University of Chittagong", 
+    year: "Running", 
+    result: "In Progress"
+  },
   { 
     degree: "B.Sc. in Engineering (CSE)", 
     institution: "University of Chittagong", 
     year: "2023", 
     result: "CGPA: 3.27",
-    details: "Specialized in Machine Learning and Software Engineering."
+    // details: "Specialized in Machine Learning and Software Engineering."
   },
   { 
     degree: "Higher Secondary Certificate (HSC)", 
@@ -144,7 +194,7 @@ export const mediaData = [
     pub: "The Daily Campus",
     headline: "করোনায় ঘরবন্দী দিনগুলো যেমন কাটছে চবি শিক্ষার্থীদের",
     link: "https://thedailycampus.com/public-university/44764/%E0%A6%95%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A7%9F-%E0%A6%98%E0%A6%B0%E0%A6%AC%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%BF-%E0%A6%A6%E0%A6%BF%E0%A6%A8%E0%A6%97%E0%A7%81%E0%A6%B2%E0%A7%8B-%E0%A6%AF%E0%A7%87%E0%A6%AE%E0%A6%A8-%E0%A6%95%E0%A6%BE%E0%A6%9F%E0%A6%9B%E0%A7%87-%E0%A6%9A%E0%A6%AC%E0%A6%BF-%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A7%80%E0%A6%A6%E0%A7%87%E0%A6%B0",
-    image: "https://thedailycampus.com/media/imgAll/2020April/big/Inkedcu-44764-5eaad08a3ebef--2020-04-30-_LI.jpg",
+    image: "/images/media-1.jpg",
     logo: "/images/dailycampus-logo.png"
   },
   {
@@ -158,7 +208,7 @@ export const mediaData = [
     pub: "The Daily Campus",
     headline: "করোনা আতঙ্কে ক্লাস পরীক্ষা বর্জনের ঘোষণা চবি শিক্ষার্থীদের",
     link: "https://thedailycampus.com/public-university/40903/%E0%A6%95%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE-%E0%A6%86%E0%A6%A4%E0%A6%99%E0%A7%8D%E0%A6%95%E0%A7%87-%E0%A6%95%E0%A7%8D%E0%A6%B2%E0%A6%BE%E0%A6%B8-%E0%A6%AA%E0%A6%B0%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%AC%E0%A6%B0%E0%A7%8D%E0%A6%9C%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%98%E0%A7%8B%E0%A6%B7%E0%A6%A3%E0%A6%BE-%E0%A6%9A%E0%A6%AC%E0%A6%BF-%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A5%E0%A7%80%E0%A6%A6%E0%A7%87%E0%A6%B0",
-    image: "https://thedailycampus.com/media/imgAll/2020March/big/cu-40903-5e6e374fafafa--2020-03-15-.jpg",
+    image: "/images/media-2.jpg",
     logo: "/images/dailycampus-logo.png"
   }
 ];
@@ -228,7 +278,7 @@ export const galleryData = [
 ];
 
 // Tech Stack Data
-export const techStackData = ["React.js", "Node.js", "TensorFlow", "Python", "Machine Learning", "Full-Stack", "NLP", "Express.js", "MySQL", "Firebase"];
+export const techStackData = ["React.js", "Node.js", "TensorFlow", "Python", "Machine Learning", "Full-Stack", "NLP", "Express.js", "MySQL", "Firebase","Project Management","Leadership", "Teamwork", "Communication", "Problem Solving","Public Relations"];
 
 // Research Publications Data
 export const researchData = [
@@ -250,7 +300,7 @@ export const researchData = [
     year: "2023",
     type: "Journal Article",
     abstract: "A comprehensive study examining the relationship between media consumption patterns and mental health outcomes among young adults during the COVID-19 pandemic in Bangladesh.",
-    doi: "https://doi.org/10.1016/j.heliyon.2023.e20371",
+    doi: "https://www.sciencedirect.com/science/article/pii/S2405844023075795",
     citations: 4,
     tags: ["Mental Health", "COVID-19", "Media Studies", "Public Health", "Bangladesh"]
   }
@@ -269,6 +319,6 @@ export const contactData = {
   email: "aurnob.csecu@gmail.com",
   phone: "+8801685530730",
   name: "Shanewaz Aurnob",
-  location: "Kotchandpur, Jhenaidah",
+  location: "Kotchandpur, Jhenaidah, Bangladesh",
   resumeUrl: "/resume/Shanewaz-Aurnob-Resume.pdf" // Updated path
 };

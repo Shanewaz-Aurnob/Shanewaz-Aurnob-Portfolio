@@ -55,7 +55,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <Icon size={16} className="sm:w-5 sm:h-5" />
               </div>
             </div>
-            <h3 className="text-base sm:text-lg md:text-xl font-serif text-white group-hover:text-accent transition-colors duration-300 mb-1 sm:mb-2 line-clamp-1">{title}</h3>
+            <h3 className="text-base sm:text-lg md:text-xl font-serif text-white group-hover:text-accent transition-colors duration-300 mb-1 sm:mb-2 line-clamp-1 leading-tight">{title}</h3>
             <div className="inline-flex items-center gap-1.5 sm:gap-2">
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-accent text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold">Project</span>

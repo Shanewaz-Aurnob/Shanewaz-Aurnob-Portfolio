@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface TextMaskProps {
   children?: React.ReactNode;
@@ -8,14 +8,36 @@ interface TextMaskProps {
 
 export const TextMask: React.FC<TextMaskProps> = ({ children, delay = 0 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Don't disconnect - keep observing in case of viewport changes
+        }
+      },
+      { threshold: 0.01, rootMargin: '-50px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   return (
     <div ref={ref} className="overflow-hidden block pb-[0.15em]">
       <motion.span
         className="block"
         initial={{ y: "100%", opacity: 0 }}
-        animate={isInView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
+        animate={isVisible ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
         transition={{ 
           duration: 0.6, 
           delay, 
@@ -28,3 +50,4 @@ export const TextMask: React.FC<TextMaskProps> = ({ children, delay = 0 }) => {
     </div>
   );
 };
+

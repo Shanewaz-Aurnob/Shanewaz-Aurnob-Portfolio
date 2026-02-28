@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SectionProps {
   children?: React.ReactNode;
@@ -19,7 +19,28 @@ export const Section: React.FC<SectionProps> = ({
   subtitle = "" 
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.05, rootMargin: '0px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   return (
     <motion.section
@@ -42,7 +63,7 @@ export const Section: React.FC<SectionProps> = ({
             )}
             {title && (
               <TextMask delay={0.2}>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight md:tracking-tighter leading-tight md:leading-none">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight md:tracking-tighter leading-snug md:leading-tight">
                   {title}
                 </h2>
               </TextMask>
@@ -61,3 +82,5 @@ export const Section: React.FC<SectionProps> = ({
     </motion.section>
   );
 };
+
+

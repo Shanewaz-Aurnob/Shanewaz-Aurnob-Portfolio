@@ -9,3 +9,5 @@ export { Magnetic } from './Magnetic';
 export { Marquee } from './Marquee';
 export { CertificateModal } from './CertificateModal';
 export { ProjectCard } from './ProjectCard';
+export { ResearchCard } from './ResearchCard';
+export { VisitorCounter } from './VisitorCounter';

@@ -146,27 +146,27 @@ export const educationData = [
   { 
     degree: "M.S in Engineering (CSE)", 
     institution: "University of Chittagong", 
-    year: "Running", 
-    result: "In Progress"
+    year: "2025", 
+  
   },
   { 
     degree: "B.Sc. in Engineering (CSE)", 
     institution: "University of Chittagong", 
     year: "2023", 
-    result: "CGPA: 3.27",
+  
     // details: "Specialized in Machine Learning and Software Engineering."
   },
   { 
     degree: "Higher Secondary Certificate (HSC)", 
     institution: "Govt. K.M.H College, Kotchandpur", 
     year: "2019", 
-    result: "GPA: 4.58" 
+  
   },
   { 
     degree: "Secondary School Certificate (SSC)", 
     institution: "Kotchandpur Govt. Model Pilot Secondary School", 
     year: "2017", 
-    result: "GPA: 4.73" 
+    
   }
 ];
 
